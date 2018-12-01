@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow test</title>
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<style type="text/css">
+
+	@media screen and (orientation:landscape) {
+		html{
+			border:1px solid green;
+		}
+		.slick-slide img{
+			width:100vh;
+		}
+	}
+
+	@media screen and (orientation:portrait){
+		html{
+			border:1px solid blue;
+			transform: rotate(-90deg);
+			transform-origin: left top;
+			width: 100vh;
+			overflow-x: hidden;
+			overflow-y: hidden; 
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		.slick-slide img{
+			width: 60vh;
+		}
+	}
+	@media screen and (orientation:portrait) and (min-height:811px) and (min-width:374px ){
+		html{
+			border:1px solid blue;
+			transform: rotate(-90deg);
+			transform-origin: left top;
+			width: 100vh;
+			overflow-x: hidden;
+			overflow-y: hidden; 
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		.slick-slide img{
+			width: 50vh;
+		}
+	}
+	@media screen and (orientation:portrait) and (min-width: 767px){
+		html{
+			border:1px solid red;
+			transform: rotate(-90deg);
+			transform-origin: left top;
+			width: 100vh;
+			overflow-x: hidden;
+			overflow-y: hidden; 
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		.slick-slide img{
+			width: 78vh;
+		}
+	}
+
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.slider {
+		width: 90%;
+		margin: 100px auto;
+		margin-top:2px;
+	}
+
+	.slick-slide {
+		margin: 0px 20px;
+	}
+
+	.slick-prev:before,
+	.slick-next:before {
+		color: black;
+	}
+	
+	.slick-slide {
+		transition: all ease-in-out .3s;
+		opacity: 0; 
+	}
+
+	.slick-active {
+		opacity: .5;
+	}
+
+	.slick-current {
+		opacity: 1;
+	}
+	.slick-next {
+    	right: 15px;
+}
+	.slick-dots li button:before{
+		font-size:10px;
+	}
+
+	.backButton{
+		background-color:#2E64D2;
+		border-radius:50%;
+		height:60px;
+		width:60px;
+		z-index:5000;
+		left: -25px;
+		position:absolute;
+		bottom:0;
+		border:none;
+	}
+	.slick-list {
+    	margin-left: 50px;
+    	margin-right: 25px;
+}
+
+</style>
+</head>
+<body>
+	<div id="backButton">
+	</div>
+	<section id="lazySlider" class="lazy slider slideShowPage"  >
+		<div>
+			<img data-lazy="../images/Slide1.jpg" >
+		</div>
+		<div>
+			<img data-lazy="../images/Slide2.jpg" >
+		</div>
+		<div>
+			<img data-lazy="../images/Slide3.jpg" >
+		</div>
+		<div>
+			<img data-lazy="../images/Slide4.jpg" >
+		</div>
+		<div>
+			<img data-lazy="../images/Slide5.jpg" >
+		</div>
+		
+	</section> 
+	<!-- <section> -->
+		<!--  <button  onclick="console.log('clicked')" style="z-index:5000;"> -->
+		 <!-- 	 <img src="../images/logout.svg" height="50px" width="50px"> -->
+		<!--  </button> -->
+	<!-- </section> -->
+		
+
+
+</body>
+</html>
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).on('ready', function() {		
+		$(".lazy").slick({
+			dots: true,
+			centerMode: true, 
+			arrows: true,
+			slidesToShow: 1,
+			mobileFirst: true,
+			swipe: true, 
+        	lazyLoad: 'ondemand', // ondemand progressive anticipated
+        	infinite: true
+        });	
+
+
+       var backDiv = document.getElementById('lazySlider'); 
+        var backButton = document.createElement('button'); 
+        backButton.setAttribute('class', 'backButton'); 	
+        var logoutImg = document.createElement('img'); 
+        logoutImg.setAttribute('src','../images/logout.svg');
+        logoutImg.setAttribute('height','30px');
+        logoutImg.setAttribute('width','30px');
+         logoutImg.setAttribute('style','transform:rotate(180deg)');
+        backButton.appendChild(logoutImg);
+        backDiv.appendChild(backButton); 
+	});
+</script>
+
