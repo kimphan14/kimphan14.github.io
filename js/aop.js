@@ -1,14 +1,17 @@
 var slideIndex = 1;
 var total = 50;
 let currentQuiz;
-
 /* todd overlay */
 
-function openIOverlay(fLink) {
+var iframe; 
+
+function openIOverlay(fLink, pageType) {
   // alert('IOverlay clicked');
 
-  let iframe = document.createElement('iframe');
+  iframe = document.createElement('iframe');
   let iOl = document.getElementById("iOverlay");
+  iframe = document.createElement('iframe');
+  iOl = document.getElementById("iOverlay");
   iOl.width = window.innerWidth;
   iOl.height = window.innerHeight;
   iframe.width = window.innerWidth;
@@ -17,16 +20,47 @@ function openIOverlay(fLink) {
   iframe.frameBorder = 0;
   iframe.sandbox = 'allow-modals allow-scripts allow-same-origin';
   iframe.setAttribute("src", fLink);
-  iframe.setAttribute("class","iframeStyle");
+  iframe.setAttribute("class", "iframeStyle");  
   iOl.appendChild(iframe);
   iOl.style.height = "100%";
+
+  if(pageType === "Game")
+  {
+    console.log("game");
+    if(window.orientation == 90)
+      {
+        console.log('Landscape');
+        iframe.setAttribute("class", "iframeStyleLandscape");  
+      }else
+      {
+         console.log('Portrait');
+         iframe.setAttribute("class", "iframeStylePortrait");  
+      }
+
+    window.addEventListener("orientationchange", function() {
+      console.log(window.orientation);
+
+      if(window.orientation == 90)
+      {
+        console.log('Landscape');
+        iframe.setAttribute("class", "iframeStyleLandscape");  
+      }else
+      {
+         console.log('Portrait');
+         iframe.setAttribute("class", "iframeStylePortrait");  
+      }
+
+      }     , false);
+
+
+  }
 }
 
 function closeIOverlay() {
   //alert('IOverlayClose clicked');
-
-  let iframe = document.getElementById('iOlFrame');
+  iframe = document.getElementById('iOlFrame');
   let iOl = document.getElementById("iOverlay");
+
   //iframe.setAttribute("src", "about:blank");
   iOl.removeChild(iframe);
   iOl.style.height = "0%";
