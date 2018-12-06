@@ -363,36 +363,6 @@
 
   function closeOverlay() {closeIOverlay();}
 
-  function readDeviceOrientation() {
-    console.log("readdeviceorientation()");
-    if(ipageType === "game")
-    {
-      console.log("in game"); 
-    }
-    else{
-      console.log("not in game");
-    }
-
-
-
-    if (Math.abs(window.orientation) === 90) {
-        // Landscape
-        //document.getElementById("orientation").innerHTML = "LANDSCAPE";
-        console.log('LANDSCAPE');
-    } else {
-      // Portrait
-      //document.getElementById("orientation").innerHTML = "PORTRAIT";
-        console.log('PORTRAIT');
-    }
-   /* if(iOvl != null) {
-      iOvl.width = window.innerWidth;
-      iOvl.height = window.innerHeight;
-    } */
-    if(iFrame != null) {
-      iFrame.width = window.innerWidth;
-      iFrame.height = window.innerHeight;
-    } 
-  }
 </script>
 </body>
 </html>
