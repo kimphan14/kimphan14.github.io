@@ -29,11 +29,11 @@ function openIOverlay(fLink, pageType) {
     console.log("game");
     if(window.orientation == 90)
       {
-        console.log('Landscape');
-        iframe.setAttribute("class", "iframeStylePortrait");  
+        console.log('Landscape1');
+        iframe.setAttribute("class", "iframeStyleLandscape");  
       }else
       {
-         console.log('Portrait');
+         console.log('Portrait1');
          iframe.setAttribute("class", "iframeStylePortrait");  
       }
 
@@ -42,11 +42,11 @@ function openIOverlay(fLink, pageType) {
 
       if(window.orientation == 90)
       {
-        console.log('Landscape');
-        iframe.setAttribute("class", "iframeStylePortrait);  
+        console.log('Landscape2');
+        iframe.setAttribute("class", "iframeStyleLandscape");  
       }else
       {
-         console.log('Portrait');
+         console.log('Portrait2');
          iframe.setAttribute("class", "iframeStylePortrait");  
       }
 
