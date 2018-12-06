@@ -30,20 +30,20 @@ function openIOverlay(fLink, pageType) {
     if(window.orientation == 90)
       {
         console.log('Landscape');
-        iframe.setAttribute("class", "iframeStyleLandscape");  
+        iframe.setAttribute("class", "iframeStylePortrait");  
       }else
       {
          console.log('Portrait');
          iframe.setAttribute("class", "iframeStylePortrait");  
       }
 
-    window.addEventListener("orientationchange", function() {
+      window.addEventListener("orientationchange", function() {
       console.log(window.orientation);
 
       if(window.orientation == 90)
       {
         console.log('Landscape');
-        iframe.setAttribute("class", "iframeStyleLandscape");  
+        iframe.setAttribute("class", "iframeStylePortrait);  
       }else
       {
          console.log('Portrait');
