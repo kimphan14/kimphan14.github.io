@@ -38,6 +38,7 @@ function openIOverlay(fLink, pageType) {
       }
 
       window.addEventListener("orientationchange", function() {
+        alert("eventlisteneradded");
       console.log(window.orientation);
 
       if(window.orientation == 90)
