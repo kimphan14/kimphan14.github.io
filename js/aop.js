@@ -41,12 +41,15 @@ function openIOverlay(fLink, pageType) {
         if (orientation === "landscape-primary") {
           console.log("That looks good.");
             iframe.setAttribute("class", "iframeStyleLandscape");
+              iframe.setAttribute("style", "border:2px solid orange"); 
         } else if (orientation === "landscape-secondary") {
             iframe.setAttribute("class", "iframeStyleLandscape");
+              iframe.setAttribute("style", "border:2px solid pink"); 
           console.log("Mmmh... the screen is upside down!");
         } else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
           console.log("Mmmh... you should rotate your device to landscape");
             iframe.setAttribute("class", "iframeStylePortrait"); 
+              iframe.setAttribute("style", "border:2px solid purple"); 
         } else if (orientation === undefined) {
          console.log("The orientation API isn't supported in this browser :("); 
         }
