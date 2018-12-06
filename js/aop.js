@@ -37,10 +37,12 @@ function openIOverlay(fLink, pageType) {
       {
         console.log('Landscape2');
         iframe.setAttribute("class", "iframeStyleLandscape");  
+        iframe.style("border","2px solid orange"); 
       }else
       {
          console.log('Portrait2');
          iframe.setAttribute("class", "iframeStylePortrait");  
+         iframe.style("border","2px solid pink"); 
       }
 
       }     , false);
@@ -49,10 +51,12 @@ function openIOverlay(fLink, pageType) {
       {
         console.log('Landscape1');
         iframe.setAttribute("class", "iframeStyleLandscape");  
+        iframe.style("border","2px solid green"); 
       }else
       {
          console.log('Portrait1');
          iframe.setAttribute("class", "iframeStylePortrait");  
+         iframe.style("border","2px solid purple"); 
       }
 
 
