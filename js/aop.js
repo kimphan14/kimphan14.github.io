@@ -33,7 +33,7 @@ function openIOverlay(fLink, pageType) {
         alert("eventlisteneradded");
       console.log(window.orientation);
 
-      if(window.orientation == 90)
+      if(window.orientation === 90)
       {
         console.log('Landscape2');
         iframe.setAttribute("class", "iframeStyleLandscape");  
@@ -47,7 +47,7 @@ function openIOverlay(fLink, pageType) {
 
       }     , false);
 
-       if(window.orientation == 90)
+       if(window.orientation === 90)
       {
         console.log('Landscape1');
         iframe.setAttribute("class", "iframeStyleLandscape");  
