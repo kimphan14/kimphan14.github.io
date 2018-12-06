@@ -30,16 +30,18 @@ function openIOverlay(fLink, pageType) {
    
 
       window.addEventListener("orientationchange", function() {
-        alert("eventlisteneradded");
+      
       console.log(window.orientation);
 
       if(window.top.orientation === 90)
       {
+          alert("orange");
         console.log('Landscape2');
         iframe.setAttribute("class", "iframeStyleLandscape");  
         iframe.setAttribute("style", "border:2px solid orange"); 
       }else
       {
+          alert("pink");
          console.log('Portrait2');
          iframe.setAttribute("class", "iframeStylePortrait");  
          iframe.setAttribute("style", "border:2px solid pink"); 
@@ -49,11 +51,13 @@ function openIOverlay(fLink, pageType) {
 
        if(window.top.orientation === 90)
       {
+          alert("green");
         console.log('Landscape1');
         iframe.setAttribute("class", "iframeStyleLandscape");  
          iframe.setAttribute("style", "border:2px solid green"); 
       }else
       {
+          alert("purple");
          console.log('Portrait1');
          iframe.setAttribute("class", "iframeStylePortrait");  
           iframe.setAttribute("style", "border:2px solid purple"); 
