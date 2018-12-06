@@ -39,7 +39,8 @@ function openIOverlay(fLink, pageType) {
         console.log('Landscape2');
         iframe.setAttribute("class", "iframeStyleLandscape");  
         iframe.setAttribute("style", "border:2px solid orange"); 
-      }else
+      }
+      if(window.top.orienation === 0)
       {
           alert("pink");
          console.log('Portrait2');
