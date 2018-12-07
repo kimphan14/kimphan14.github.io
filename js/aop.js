@@ -32,31 +32,31 @@ function openIOverlay(fLink, pageType) {
         
   
       });
-   */
+      */
 
       window.addEventListener("orientationchange", function() 
       {
         var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
         console.log(orientation);
         if (orientation === "landscape-primary") {
-          console.log("That looks good.");
-            iframe.setAttribute("class", "iframeStyleLandscape");
-              iframe.setAttribute("style", "border:2px solid orange"); 
-        } else if (orientation === "landscape-secondary") {
-            iframe.setAttribute("class", "iframeStyleLandscape");
-              iframe.setAttribute("style", "border:2px solid pink"); 
-          console.log("Mmmh... the screen is upside down!");
-        } else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
-          console.log("Mmmh... you should rotate your device to landscape");
-            iframe.setAttribute("class", "iframeStylePortrait"); 
-              iframe.setAttribute("style", "border:2px solid purple"); 
-        } else if (orientation === undefined) {
-         console.log("The orientation API isn't supported in this browser :("); 
-        }
-      
+         alert("That looks good.");
+         iframe.setAttribute("class", "iframeStyleLandscape");
+         iframe.setAttribute("style", "border:2px solid orange"); 
+       } else if (orientation === "landscape-secondary") {
+        iframe.setAttribute("class", "iframeStyleLandscape");
+        iframe.setAttribute("style", "border:2px solid pink"); 
+        alert("Mmmh... the screen is upside down!");
+      } else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
+        alert("Mmmh... you should rotate your device to landscape");
+        iframe.setAttribute("class", "iframeStylePortrait"); 
+        iframe.setAttribute("style", "border:2px solid purple"); 
+      } else if (orientation === undefined) {
+       alert("The orientation API isn't supported in this browser :("); 
+     }
+     
       /*console.log(window.top.orientation);
       alert("orienations: "+ window.top.orienation);*/
-    
+      
 
      /* if(window.top.orientation === 90)
       {
@@ -71,9 +71,9 @@ function openIOverlay(fLink, pageType) {
          console.log('Portrait2');
          iframe.setAttribute("class", "iframeStylePortrait");  
          iframe.setAttribute("style", "border:2px solid pink"); 
-      }*/
+       }*/
 
-      }     , false);
+     }     , false);
 
      /*  if(window.top.orientation === 90)
       {
@@ -87,13 +87,13 @@ function openIOverlay(fLink, pageType) {
          console.log('Portrait1');
          iframe.setAttribute("class", "iframeStylePortrait");  
           iframe.setAttribute("style", "border:2px solid purple"); 
-      }*/
+        }*/
 
 
-  }
-}
+      }
+    }
 
-function closeIOverlay() {
+    function closeIOverlay() {
   //alert('IOverlayClose clicked');
   iframe = document.getElementById('iOlFrame');
   let iOl = document.getElementById("iOverlay");
@@ -306,7 +306,7 @@ function loadSearchModal(){
   function clickExitSlideshow()
   {
     window.location.href ="index.html";
-     }
+  }
 
   function loadNotesModal(){
 
@@ -661,17 +661,17 @@ function clickBackToQuiz()
 
 function portraitStyle()
 {
-    $("#mobileFooter").css('display', 'unset');
-      $("#sliderScreen").css('margin-top', '0px');
-      $(".footerIcons").css('display', 'unset');
-      $(".page-footer").css('display', 'unset');
-      $("nav").css('height', '56px');
-      $("nav").css('transition', 'none');
-      $(".imageStyle").css('background-size', 'contain');
-      $(".myProgress").css('bottom', '65px');
-       $('nav').hover(function() {
-      $(this).stop().css('height','56px')
-      })
+  $("#mobileFooter").css('display', 'unset');
+  $("#sliderScreen").css('margin-top', '0px');
+  $(".footerIcons").css('display', 'unset');
+  $(".page-footer").css('display', 'unset');
+  $("nav").css('height', '56px');
+  $("nav").css('transition', 'none');
+  $(".imageStyle").css('background-size', 'contain');
+  $(".myProgress").css('bottom', '65px');
+  $('nav').hover(function() {
+    $(this).stop().css('height','56px')
+  })
 }
 
 function resetActivityArrow()
@@ -740,7 +740,7 @@ function loadQuiz(name, datastoreName){
 
   $("#app_cont").load("content/quizPage.html");
   $("#pageTitle").text(name + " Quiz");
-   $("#menuButton").hide();
+  $("#menuButton").hide();
   $("#backQuizButton").show();
   animateQuizArrow();
 }
