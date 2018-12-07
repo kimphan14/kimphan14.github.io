@@ -48,13 +48,14 @@ function openIOverlay(fLink, pageType) {
         {
           if(mql.matches)
           {  
-            iframe.setAttribute("class", "iframeStyleLandscape");
-            alert("ios land");
+           
+            iframe.setAttribute("class", "iframeStylePortrait");  
+            alert("ios port");
           } 
           else 
           {  
-            iframe.setAttribute("class", "iframeStylePortrait");  
-            alert("ios port");
+             iframe.setAttribute("class", "iframeStyleLandscape");
+            alert("ios land");
           }
         }
 
