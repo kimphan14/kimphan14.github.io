@@ -36,6 +36,16 @@ function openIOverlay(fLink, pageType) {
 
       window.addEventListener("orientationchange", function() 
       {
+        var mql = window.matchMedia("(orientation: portrait)");
+        if(mql.matches) {  
+        // Portrait orientation
+        alert("were in portrait"); 
+        } else {  
+        // Landscape orientation
+        alert("were in landscape");
+        }
+
+
         var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
         console.log(orientation);
         if (orientation === "landscape-primary") {
@@ -53,10 +63,10 @@ function openIOverlay(fLink, pageType) {
       } else if (orientation === undefined) {
        alert("The orientation API isn't supported in this browser :("); 
      }
-     
+
       /*console.log(window.top.orientation);
       alert("orienations: "+ window.top.orienation);*/
-      
+
 
      /* if(window.top.orientation === 90)
       {
