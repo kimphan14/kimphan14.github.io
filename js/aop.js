@@ -28,8 +28,43 @@ function openIOverlay(fLink, pageType) {
   {
     var mql = window.matchMedia("(orientation: portrait)");
     var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
-     
-     if (orientation === "landscape-primary") 
+    
+
+      window.addEventListener("orientationchange", function() 
+      {
+        var mql1 = window.matchMedia("(orientation: portrait)");
+        var orientation1 = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
+    
+        if (orientation1 === "landscape-primary") 
+        {
+          iframe.setAttribute("class", "iframeStyleLandscape");
+          alert("land1");
+        } 
+        else if (orientation1 === "landscape-secondary") 
+        {
+          iframe.setAttribute("class", "iframeStyleLandscape");
+           alert("land2");
+        } 
+        else if (orientation1 === "portrait-secondary" || orientation === "portrait-primary") 
+        {
+          iframe.setAttribute("class", "iframeStylePortrait"); 
+           alert("port");
+        } 
+        else if (orientation1 === undefined) 
+        {
+           alert("ios");
+          if(mql1.matches)
+          {  
+            iframe.setAttribute("class", "iframeStyleLandscape");
+          } 
+          else 
+          {  
+            iframe.setAttribute("class", "iframeStylePortrait");  
+          }
+        }
+      }     , false);
+
+  if (orientation === "landscape-primary") 
         {
           iframe.setAttribute("class", "iframeStyleLandscape");
           alert("landscape-primary");
@@ -59,33 +94,6 @@ function openIOverlay(fLink, pageType) {
           }
         }
 
-
-      window.addEventListener("orientationchange", function() 
-      {
-        if (orientation === "landscape-primary") 
-        {
-          iframe.setAttribute("class", "iframeStyleLandscape");
-        } 
-        else if (orientation === "landscape-secondary") 
-        {
-          iframe.setAttribute("class", "iframeStyleLandscape");
-        } 
-        else if (orientation === "portrait-secondary" || orientation === "portrait-primary") 
-        {
-          iframe.setAttribute("class", "iframeStylePortrait"); 
-        } 
-        else if (orientation === undefined) 
-        {
-          if(mql.matches)
-          {  
-            iframe.setAttribute("class", "iframeStyleLandscape");
-          } 
-          else 
-          {  
-            iframe.setAttribute("class", "iframeStylePortrait");  
-          }
-        }
-      }     , false);
     }
   }
 
