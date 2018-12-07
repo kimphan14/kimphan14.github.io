@@ -26,90 +26,39 @@ function openIOverlay(fLink, pageType) {
 
   if(pageType === "Game")
   {
-    console.log("game");
-
-/*    $("#iOlFrame").add(parent.document).on('orientationchange',function() {
-        
-  
-      });
-      */
-
       window.addEventListener("orientationchange", function() 
       {
         var mql = window.matchMedia("(orientation: portrait)");
-
-
-
         var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
-        console.log(orientation);
-        if (orientation === "landscape-primary") {
-         alert("That looks good.");
-         iframe.setAttribute("class", "iframeStyleLandscape");
-         iframe.setAttribute("style", "border:2px solid orange"); 
-       } else if (orientation === "landscape-secondary") {
-        iframe.setAttribute("class", "iframeStyleLandscape");
-        iframe.setAttribute("style", "border:2px solid pink"); 
-        alert("Mmmh... the screen is upside down!");
-      } else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
-        alert("Mmmh... you should rotate your device to landscape");
-        iframe.setAttribute("class", "iframeStylePortrait"); 
-        iframe.setAttribute("style", "border:2px solid purple"); 
-      } else if (orientation === undefined) {
-       alert("The orientation API isn't supported in this browser :("); 
-        if(mql.matches) {  
-        // Portrait orientation
-        //alert("were in portrait"); 
-         iframe.setAttribute("class", "iframeStyleLandscape");
-        iframe.setAttribute("style", "border:2px solid green"); 
-        } else {  
-        // Landscape orientation
-        //alert("were in landscape");
-        
-        iframe.setAttribute("class", "iframeStylePortrait"); 
-        iframe.setAttribute("style", "border:2px solid yellow"); 
+     
+        if (orientation === "landscape-primary") 
+        {
+          iframe.setAttribute("class", "iframeStyleLandscape");
+        } 
+        else if (orientation === "landscape-secondary") 
+        {
+          iframe.setAttribute("class", "iframeStyleLandscape");
+        } 
+        else if (orientation === "portrait-secondary" || orientation === "portrait-primary") 
+        {
+          iframe.setAttribute("class", "iframeStylePortrait"); 
+        } 
+        else if (orientation === undefined) 
+        {
+          if(mql.matches)
+          {  
+            iframe.setAttribute("class", "iframeStyleLandscape");
+          } 
+          else 
+          {  
+            iframe.setAttribute("class", "iframeStylePortrait");  
+          }
         }
-     }
-
-      /*console.log(window.top.orientation);
-      alert("orienations: "+ window.top.orienation);*/
-
-
-     /* if(window.top.orientation === 90)
-      {
-          alert("orange");
-        console.log('Landscape2');
-        
-        iframe.setAttribute("style", "border:2px solid orange"); 
-      }
-      if(window.top.orientation === 0)
-      {
-          alert("pink");
-         console.log('Portrait2');
-         iframe.setAttribute("class", "iframeStylePortrait");  
-         iframe.setAttribute("style", "border:2px solid pink"); 
-       }*/
-
-     }     , false);
-
-     /*  if(window.top.orientation === 90)
-      {
-          alert("green");
-        console.log('Landscape1');
-        iframe.setAttribute("class", "iframeStyleLandscape");  
-         iframe.setAttribute("style", "border:2px solid green"); 
-      }else
-      {
-          alert("purple");
-         console.log('Portrait1');
-         iframe.setAttribute("class", "iframeStylePortrait");  
-          iframe.setAttribute("style", "border:2px solid purple"); 
-        }*/
-
-
-      }
+      }     , false);
     }
+  }
 
-    function closeIOverlay() {
+  function closeIOverlay() {
   //alert('IOverlayClose clicked');
   iframe = document.getElementById('iOlFrame');
   let iOl = document.getElementById("iOverlay");
