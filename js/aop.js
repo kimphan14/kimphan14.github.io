@@ -26,11 +26,41 @@ function openIOverlay(fLink, pageType) {
 
   if(pageType === "Game")
   {
+    var mql = window.matchMedia("(orientation: portrait)");
+    var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
+     
+     if (orientation === "landscape-primary") 
+        {
+          iframe.setAttribute("class", "iframeStyleLandscape");
+          alert("landscape-primary");
+        } 
+        else if (orientation === "landscape-secondary") 
+        {
+          iframe.setAttribute("class", "iframeStyleLandscape");
+          alert("landscape-secondary");
+        } 
+        else if (orientation === "portrait-secondary" || orientation === "portrait-primary") 
+        {
+          iframe.setAttribute("class", "iframeStylePortrait"); 
+          alert("portrait");
+        } 
+        else if (orientation === undefined) 
+        {
+          if(mql.matches)
+          {  
+            iframe.setAttribute("class", "iframeStyleLandscape");
+            alert("ios land");
+          } 
+          else 
+          {  
+            iframe.setAttribute("class", "iframeStylePortrait");  
+            alert("ios port");
+          }
+        }
+
+
       window.addEventListener("orientationchange", function() 
       {
-        var mql = window.matchMedia("(orientation: portrait)");
-        var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
-     
         if (orientation === "landscape-primary") 
         {
           iframe.setAttribute("class", "iframeStyleLandscape");
