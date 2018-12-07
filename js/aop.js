@@ -59,12 +59,13 @@ function openIOverlay(fLink, pageType) {
         if(mql.matches) {  
         // Portrait orientation
         //alert("were in portrait"); 
-         iframe.setAttribute("class", "iframeStylePortrait"); 
+         iframe.setAttribute("class", "iframeStyleLandscape");
         iframe.setAttribute("style", "border:2px solid green"); 
         } else {  
         // Landscape orientation
         //alert("were in landscape");
-        iframe.setAttribute("class", "iframeStyleLandscape");
+        
+        iframe.setAttribute("class", "iframeStylePortrait"); 
         iframe.setAttribute("style", "border:2px solid yellow"); 
         }
      }
