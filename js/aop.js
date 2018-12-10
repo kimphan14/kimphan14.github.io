@@ -14,6 +14,7 @@ function openIOverlay(fLink, pageType) {
   iOl = document.getElementById("iOverlay");
   iOl.width = window.innerWidth;
   iOl.height = window.innerHeight;
+  iOl.setAttribute("style", "background-color:#000");
   iframe.width = window.innerWidth;
   iframe.height = window.innerHeight;
   iframe.id = "iOlFrame";
