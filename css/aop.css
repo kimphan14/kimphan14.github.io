@@ -32,9 +32,9 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 90vh;
+    width: 50vh;
     height: 100%;
-    border: 1px solid red;
+    border: 1px solid blue;
     transform: rotate(-90deg);
     transform-origin: left top;
     overflow-x: hidden;
