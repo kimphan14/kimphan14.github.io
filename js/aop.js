@@ -26,7 +26,7 @@ function openIOverlay(fLink, pageType) {
   iOl.appendChild(iframe);
   iOl.style.height = "100%";
 
-  if(pageType === "Game")
+   if(pageType === "Game")
   {
     var mql = window.matchMedia("(orientation: portrait)");
     var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
@@ -85,9 +85,9 @@ function openIOverlay(fLink, pageType) {
         }
 
     }
-  }
+}
 
-  function closeIOverlay() {
+function closeIOverlay() {
   //alert('IOverlayClose clicked');
   iframe = document.getElementById('iOlFrame');
   let iOl = document.getElementById("iOverlay");
@@ -300,7 +300,7 @@ function loadSearchModal(){
   function clickExitSlideshow()
   {
     window.location.href ="index.html";
-  }
+     }
 
   function loadNotesModal(){
 
@@ -655,17 +655,17 @@ function clickBackToQuiz()
 
 function portraitStyle()
 {
-  $("#mobileFooter").css('display', 'unset');
-  $("#sliderScreen").css('margin-top', '0px');
-  $(".footerIcons").css('display', 'unset');
-  $(".page-footer").css('display', 'unset');
-  $("nav").css('height', '56px');
-  $("nav").css('transition', 'none');
-  $(".imageStyle").css('background-size', 'contain');
-  $(".myProgress").css('bottom', '65px');
-  $('nav').hover(function() {
-    $(this).stop().css('height','56px')
-  })
+    $("#mobileFooter").css('display', 'unset');
+      $("#sliderScreen").css('margin-top', '0px');
+      $(".footerIcons").css('display', 'unset');
+      $(".page-footer").css('display', 'unset');
+      $("nav").css('height', '56px');
+      $("nav").css('transition', 'none');
+      $(".imageStyle").css('background-size', 'contain');
+      $(".myProgress").css('bottom', '65px');
+       $('nav').hover(function() {
+      $(this).stop().css('height','56px')
+      })
 }
 
 function resetActivityArrow()
@@ -734,7 +734,7 @@ function loadQuiz(name, datastoreName){
 
   $("#app_cont").load("content/quizPage.html");
   $("#pageTitle").text(name + " Quiz");
-  $("#menuButton").hide();
+   $("#menuButton").hide();
   $("#backQuizButton").show();
   animateQuizArrow();
 }
