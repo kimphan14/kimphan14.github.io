@@ -34,15 +34,15 @@
     left: 0;
    /* width: 90vh;
     height: 100%;*/
-    transform: rotate(-90deg);
-    transform-origin: left top;
+   /* transform: rotate(-90deg);
+    transform-origin: left top;*/
     background-color: #31EABB;
-    border: 1px solid purple;
+    border: 1px solid pink;
    /* overflow-x: hidden;*/
 }
 
 .iframeStyleLandscape{
-     position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
