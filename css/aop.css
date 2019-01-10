@@ -32,13 +32,25 @@
     position: absolute;
     top: 100%;
     left: 0;
-   /* width: 90vh;
+    /*width: 100vh;
     height: 100%;*/
-   /* transform: rotate(-90deg);
-    transform-origin: left top;*/
+    width: 100vh;
+    height: 47%;
+    transform: rotate(-90deg);
+    transform-origin: left top;
     background-color: #31EABB;
-    border: 1px solid pink;
+    border: 1px solid red;
    /* overflow-x: hidden;*/
+}
+
+
+.iframeStylePortrait > #document> html> body> .factoryModalContent> .modal> .conveyorBackground{
+  background-size:50%;
+  border:2px solid orange;
+}
+
+.iframeStyleLandscape >#document > html> body> .factoryModalContent > .modal> .conveyorBackground{
+  border:2px solid green;
 }
 
 .iframeStyleLandscape{
@@ -52,8 +64,6 @@
 }
 
 /* end todd overlay */
-
-
 
 nav{
  /* background-color:#01579b;*/
