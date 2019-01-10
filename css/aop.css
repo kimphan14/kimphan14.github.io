@@ -32,14 +32,12 @@
     position: absolute;
     top: 100%;
     left: 0;
-  /*  width: 90vh;
+   /* width: 90vh;
     height: 100%;*/
-    width:100%;
-    height:100vw;
-    border: 1px solid red;
     transform: rotate(-90deg);
     transform-origin: left top;
-      background-color: #31EABB;
+    background-color: #31EABB;
+    border: 1px solid purple;
    /* overflow-x: hidden;*/
 }
 
