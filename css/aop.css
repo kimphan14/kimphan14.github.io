@@ -36,9 +36,10 @@
     height: 100%;*/
     width:100%;
     height:100vw;
-    border: 1px solid orange;
+    border: 1px solid yellow;
     transform: rotate(-90deg);
     transform-origin: left top;
+      background-color: #31EABB;
    /* overflow-x: hidden;*/
 }
 
@@ -49,6 +50,7 @@
     width: 100%;
     height: 100%;
     border: 0;
+    background-color: #31EABB;
 }
 
 /* end todd overlay */
@@ -1000,9 +1002,3 @@ background: linear-gradient(to right, rgba(252,234,33,1) 0%, rgba(251,178,6,1) 2
 }
 
 /*---------------------------------------------------------------------*/
-.conveyorBackground{
-   background-image: url("../images/game/conveyerImgs/ConveyorStartScreen.png");
-  background-repeat: no-repeat;
-  background-size:auto 100%;
-  background-position: center;
-}
