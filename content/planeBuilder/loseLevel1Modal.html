@@ -9,7 +9,7 @@
       display: block; /* Block by default */
       position: fixed; /* Stay in place */
       z-index: 1; /* Sit on top */
-      padding-top: 20px; /* Location of the box */
+      padding-top: 30px; /* Location of the box */
       left: 0;
       top: 0;
       width: 100%; /* Full width */
@@ -23,22 +23,55 @@
   .modal-content {
       margin: auto;
       padding: 20px;
-      border: 1px solid #888;
-      background-color: white;
-      width: 85%;
+      padding-bottom:5px;
+      border: 8px solid #BA1852;
+      background-color: #FFDADB;
+      width: 55%;
+      border-radius:10px;
+      box-shadow: 10px 8px 20px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+  .retryBtn{
+    height:45px;
+    margin-right:5px;
+  }
+  .quitBtn{
+    height:45px;
   }
 
-  .close:hover,.close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
+  .btnDiv{
+    text-align:center;
+  }
+
+  .closeBtn{
+    float: right;
+    height: 45px;
+    margin-right: -36px;
+    margin-top: -45px;
+  }
+
+  .failed{
+    height:45px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: -445px;
+  }
+
+  .parts{
+    height:90px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom:10px;
+  }
+
+  .level{
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 5px;
   }
 </style>
 </head>
@@ -49,9 +82,18 @@
 <div id="myModal" class="modal">
 
   <div class="modal-content">
-      <a href="javascript:void(0)" class="closebtn" onclick="window.top.closeOverlay()">Close Game</a>
-      <p>Oh No! You let a plane not get completed, Retry to Level 1?</p>
-      <a onclick="startFactory(1);">Retry Level 1</a><br/>
+     <!--  <a href="javascript:void(0)" class="closebtn" onclick="window.top.closeOverlay()">Close Game</a> -->
+       <img class="closeBtn" src ="images/game/conveyerImgs/CloseButton.png" onclick="window.top.closeOverlay()">
+       <img class="failed" src ="images/game/conveyerImgs/Failed.png" >
+      <!--  <p style="text-align:center; font-weight:bold;">Level: 1</p> -->
+      <img class="level" src="images/game/conveyerImgs/Level1.png">
+      <p style="text-align: center;">Oh No! You let a plane not get completed, Retry to Level 1?</p>
+    <img class="parts" src ="images/game/conveyerImgs/Parts.png">
+
+    <div class="btnDiv"><img class="retryBtn" src ="images/game/conveyerImgs/RetryButton.png" onclick="startFactory(1);">
+     <img class="quitBtn" src ="images/game/conveyerImgs/QuitButton.png" oonclick="window.top.closeOverlay()">
+     <div>
+
   </div>
 
 </div>

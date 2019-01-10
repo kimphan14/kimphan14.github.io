@@ -40,6 +40,7 @@ var planeBuilderSim = function(sketch) {
 
 
   startFactory = function(level) {
+     
       removeAllFuselage();
       closeModal();
       this.level = level;
